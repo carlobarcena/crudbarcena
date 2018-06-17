@@ -6,5 +6,5 @@ Requirements: Xampp for Database (PHP >= 7.1.3) Composer for Laravel (https://ge
 2. RUN run.bat (for Windows) or access console and go to the folder directory.
 3. Type "php artisan serve"
 4. Use a web browser, access url http://localhost:8000/
-5. To initialize database access url: http://localhost:8000/initialize or click the link in the welcome page.
+5. To initialize database access url: http://localhost:8000/initialize. 
 6. Login Credentials username: admin, password: 12345 or you can register yourself.
