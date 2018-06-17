@@ -1,56 +1,73 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    @include('partials.loginhead')
+</head>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Login</div>
+<body class="my-login-page" onload="myFunction()" style="margin:0;">
+        <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-md-center h-100">
+                <div class="card-wrapper">
+                    <div class="brand">
+                        <img src="img/logo.jpg">
+                    </div>
+                    <div class="card fat">
+                        <div class="card-body">
+                            <h4 class="card-title">Login</h4>
+                            <form method="POST" action="{{route('login')}}">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input id="username" type="userrname" class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
-
-                            <div class="col-md-6">
-                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
-
-                                @if ($errors->has('username'))
-                                    <span class="invalid-feedback">
+                                    @if ($errors->has('username'))
+                                    <span class="error-red">
                                         <strong>{{ $errors->first('username') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
+                                    @endif
+                                    
+                                </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
+                                <div class="form-group">
+                                    <label for="password">Password
+                                    </label>
+                                    <input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required data-eye>
+                                    
+                                    @if ($errors->has('password'))
+                                    <span class="error-red">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
+                                    @endif
+                                </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-                                
-                            </div>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="remember"> Remember Me
+                                    </label>
+                                </div>
+
+                                <div class="form-group no-margin">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Login
+                                    </button>
+                                </div>
+                                <div class="margin-top20 text-center">
+                                    Don't have an account? <a href="register">Create One</a>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
+                    <div class="footer">
+                        Carlo Barcena &copy; 2018 &mdash; Employee-Department CRUD 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </section>
+
+    
+
+    @include('partials.script')
+</body>
+</html>

@@ -9,7 +9,7 @@
 <form method="POST" action="edited_d">
 @csrf
 	<div class="modal-body">
-		<input class="form-control" id="d_id" type="text" name="d_id" value="{{$id}}" hidden required>
+		<input class="form-control nodisplay" id="d_id" type="text" name="d_id" value="{{$id}}" required>
 
 		<div class="row form-group">
         <label for="name" class="col-form-label col-md-3">Name: </label>
@@ -29,7 +29,7 @@
 
 	<!-- Modal footer -->
 	<div class="modal-footer">
-		<button type="submit" class="btn btn-primary">Edit</button>
-		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		<button type="submit" class="btn btn-primary btn-fill">Edit</button>
+		<button type="button" class="btn btn-secondary btn-fill" data-dismiss="modal">Close</button>
 	</div>
 </form>

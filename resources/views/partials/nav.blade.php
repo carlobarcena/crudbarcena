@@ -1,45 +1,37 @@
-<!-- nav.blade.php -->
-<nav class="navbar navbar-expand-lg navbar-light back2 fixed-top">
-	<a class="navbar-brand" href="/">Employee - Department CRUD</a>
+<nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">{{$content_name}}</a> 
+                </div>
+                <div class="collapse navbar-collapse">
+                    
 
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmobile">
-	<span class=""><i class="fas fa-bars" style="color:white"></i></span>
-  	</button>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a href="#" data-toggle="popover" data-placement="bottom" title="Account Details" data-content="
+                           Username: {{Auth::user()->username}}
+                           Email:{{Auth::user()->email}} 
+                           ">
+                               {{Auth::user()->username}}
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout
+                            </a>
+                        </li>
 
-  	<div class="collapse navbar-collapse" id="navbarmobile">
-  		
-  		<ul class="navbar-nav ml-auto">
-  			@guest
-  			<li class="nav-item">
-  				<a  class="nav-link" href="login">Login</a>
-  			</li>
-  			<li class="nav-item">
-  				<a  class="nav-link" href="register">Register</a>
-  			</li>
-  			@else
-  			<li class="nav-item">
-  				<a  class="nav-link" href="home">Dashboard ({{Auth::user()->username}})</a>
-  			</li>
-
-        <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a  class="nav-link" href="employee">Employee</a>
-        </li>
-        <li class="nav-item">
-          <a  class="nav-link" href="department">Department</a>
-        </li>
-      </ul>
-
-
-  			<li class="nav-item">
-  				<a  class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-  			</li>
-
-  			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-               @csrf
-            </form>
-  			@endguest
-
-  		</ul>
-  	</div>
-</nav>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                   @csrf
+                                </form>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>

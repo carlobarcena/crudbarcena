@@ -11,12 +11,12 @@
 	@csrf
 	<div class="modal-body">
 	You are about to delete {{$name}}.
-	<input type="text" name="del_did" value="{{$id}}" hidden>
+	<input type="text" name="del_did" value="{{$id}}" class="nodisplay">
 	</div>
 
 	<!-- Modal footer -->
 	<div class="modal-footer">
-	<button type="submit" class="btn btn-danger">Delete</button>
-	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	<button type="submit" class="btn btn-danger btn-fill">Delete</button>
+	<button type="button" class="btn btn-secondary btn-fill" data-dismiss="modal">Close</button>
 	</div>
 </form>

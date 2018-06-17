@@ -1,9 +1,15 @@
 <!-- browse_e.blade.php -->
-<div class="container">
-<div class="row justify-content-center">
-	<table id="empTable" class="table table-striped table-bordered dt-responsive nowrap back1" style="width:100%">
-		<thead>
-			<tr>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="header">
+					<h4 class="title">Employee List</h4>
+				</div>
+				<div class="content">
+					<table id="empTable" class="table table-striped table-bordered dt-responsive nowrap back1 nodisplay" style="width: 100%;">
+				<thead>
+				<tr>
 				<th scope="col">Id</th>
 				<th data-priority="1" scope="col">Name</th>
 				<th scope="col">Age</th>
@@ -13,9 +19,9 @@
 				<th scope="col">Document</th>
 				<th scope="col">Status</th>
 				<th data-priority="2" scope="col">Action</th>
-			</tr>
-		</thead>
-		<tbody>
+				</tr>
+				</thead>
+				<tbody>
 			@foreach ($emp_list as $emp)
 			<tr>
 				<td>{{$emp->id}}</td>
@@ -41,21 +47,25 @@
 			@endforeach
 		</tbody>
 	</table>
-</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+
 </div>
 
-<!-- The Modal -->
-<div class="modal" id="edit_eModal">
-  <div class="modal-dialog">
-    <div class="modal-content" id="modal-ajax">
 
-    </div>
-  </div>
-</div>
 
 <script>
 $(document).ready(function(){
-	  $('#empTable').DataTable();
+
+	  $( "#empTable" ).removeClass( "nodisplay" ).delay(1500).queue(function(){
+            $('#empTable').DataTable();
+            $(this).dequeue();
+        });;
+	  
 });
 
 </script>

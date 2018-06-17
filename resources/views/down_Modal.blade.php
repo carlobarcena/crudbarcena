@@ -16,7 +16,7 @@
 
 	<!-- Modal footer -->
 	<div class="modal-footer">
-	<button type="submit" class="btn btn-info">Download</button>
-	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	<button type="submit" class="btn btn-info btn-fill">Download</button>
+	<button type="button" class="btn btn-secondary btn-fill" data-dismiss="modal">Close</button>
 	</div>
 </form>

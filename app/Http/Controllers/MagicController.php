@@ -9,7 +9,7 @@ use App\Department;
 use App\User;
 use Auth;
 
-class CountController extends Controller
+class MagicController extends Controller
 {
     function initial(){
     // Refresh Database
@@ -18,8 +18,7 @@ class CountController extends Controller
     //Create 1 Admin User
     $user = new User;
     $user->username = 'admin';
-    $user->firstname = 'Carlo';
-    $user->lastname = 'Barcena';
+    $user->email = 'admin@crud.com';
 	$user->password = bcrypt('12345');
 	$user->save();
 
@@ -59,7 +58,7 @@ class CountController extends Controller
          '--class' => 'EmployeesTableSeeder'
     ]);
 	
-	session(['datainit' => 1]);
+	//session(['datainit' => 1]);
 	return redirect('/');
 	}
 }

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095
+class ComposerStaticInite2b2dfc900bc0b183b17ed39bd54532e
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -328,11 +328,10 @@ class ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\ContentController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\CountController' => __DIR__ . '/../..' . '/app/Http/Controllers/CountController.php',
         'App\\Http\\Controllers\\CrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/CrudController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\ValidationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ValidationController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -1405,6 +1404,7 @@ class ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095
         'Illuminate\\Foundation\\Testing\\WithoutEvents' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Testing/WithoutEvents.php',
         'Illuminate\\Foundation\\Testing\\WithoutMiddleware' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Testing/WithoutMiddleware.php',
         'Illuminate\\Foundation\\Validation\\ValidatesRequests' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Validation/ValidatesRequests.php',
+        'Illuminate\\Hashing\\AbstractHasher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/AbstractHasher.php',
         'Illuminate\\Hashing\\ArgonHasher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/ArgonHasher.php',
         'Illuminate\\Hashing\\BcryptHasher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php',
         'Illuminate\\Hashing\\HashManager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/HashManager.php',
@@ -2785,6 +2785,7 @@ class ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095
         'Psy\\Command\\SudoCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/SudoCommand.php',
         'Psy\\Command\\ThrowUpCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/ThrowUpCommand.php',
         'Psy\\Command\\TimeitCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/TimeitCommand.php',
+        'Psy\\Command\\TimeitCommand\\TimeitVisitor' => __DIR__ . '/..' . '/psy/psysh/src/Command/TimeitCommand/TimeitVisitor.php',
         'Psy\\Command\\TraceCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/TraceCommand.php',
         'Psy\\Command\\WhereamiCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/WhereamiCommand.php',
         'Psy\\Command\\WtfCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/WtfCommand.php',
@@ -3692,10 +3693,10 @@ class ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdb8fa32bdc5f58252114b44e058bd095::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite2b2dfc900bc0b183b17ed39bd54532e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite2b2dfc900bc0b183b17ed39bd54532e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite2b2dfc900bc0b183b17ed39bd54532e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite2b2dfc900bc0b183b17ed39bd54532e::$classMap;
 
         }, null, ClassLoader::class);
     }

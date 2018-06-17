@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 use App\Employee;
+
 
 class EmployeesTableSeeder extends Seeder
 {

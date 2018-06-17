@@ -11,26 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-
-Route::get('employee', function () {
-	if (Auth::guest()) {
-	 return redirect('login');
-	}
-	session(['link1' => 1]);
-    return view('employee');
-});
-
-Route::get('department', function () {
-	if (Auth::guest()) {
-	 return redirect('login');
-	}
-	session(['link2' => 1]);
-    return view('department');
-});
+Route::get('/','ContentController@content1');
+Route::get('/dashboard','ContentController@content1');
+Route::get('/employee','ContentController@content2');
+Route::get('/department','ContentController@content3');
+Route::get('/content4','ContentController@content4');
+Route::get('/content5','ContentController@content5');
 
 Route::get('/create_employee','CrudController@scEmployee');
 
@@ -58,8 +45,8 @@ Route::post('/deleted_d','CrudController@deletedDepartment');
 Route::post('/down_f','CrudController@downFile');
 Route::post('/dl_f','CrudController@downloadFile');
 
-Route::get('/initialize','CountController@initial');
 
+Route::get('/initialize','MagicController@initial');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

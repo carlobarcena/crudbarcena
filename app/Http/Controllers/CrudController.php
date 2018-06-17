@@ -7,6 +7,7 @@ use App\Employee;
 use App\Department;
 use Auth;
 
+
 class CrudController extends Controller
 {
     function scEmployee(){
@@ -56,7 +57,6 @@ class CrudController extends Controller
         $department = $request->department;
         $document = $request->document;
         $status = $request->status;
-
         $dept_list = Department::all();
 
         return view('edit_eModal',compact('id','name','age','gender','address','department','document','status','dept_list'));
