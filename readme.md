@@ -10,5 +10,5 @@ Requirements: Xampp for Database (PHP >= 7.1.3) Composer for Laravel (https://ge
 6. Login Credentials username: admin, password: 12345 or you can register yourself.
 
 Live Demo
-http://quiet-refuge-91568.herokuapp.com
-http://quiet-refuge-91568.herokuapp.com/initialize -> reset database
+1. http://quiet-refuge-91568.herokuapp.com
+2. http://quiet-refuge-91568.herokuapp.com/initialize -> reset database
