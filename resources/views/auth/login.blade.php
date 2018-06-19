@@ -4,7 +4,7 @@
     @include('partials.loginhead')
 </head>
 
-<body class="my-login-page" onload="myFunction()" style="margin:0;">
+<body class="my-login-page" style="margin:0;">
         <section class="h-100">
         <div class="container h-100">
             <div class="row justify-content-md-center h-100">

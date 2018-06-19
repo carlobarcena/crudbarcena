@@ -7,11 +7,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">{{$content_name}}</a> 
+                    <span class="navbar-brand">{{$content_name}}</span> 
                 </div>
                 <div class="collapse navbar-collapse">
-                    
-
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                            <a href="#" data-toggle="popover" data-placement="bottom" title="Account Details" data-content="

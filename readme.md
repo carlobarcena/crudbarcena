@@ -8,3 +8,7 @@ Requirements: Xampp for Database (PHP >= 7.1.3) Composer for Laravel (https://ge
 4. Use a web browser, access url http://localhost:8000/
 5. To initialize database access url: http://localhost:8000/initialize. 
 6. Login Credentials username: admin, password: 12345 or you can register yourself.
+
+Live Demo
+http://quiet-refuge-91568.herokuapp.com
+http://quiet-refuge-91568.herokuapp.com/initialize -> reset database
