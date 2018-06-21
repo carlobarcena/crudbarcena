@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Employee;
 use App\Department;
 use Auth;
+use Session;
 
 
 class CrudController extends Controller
@@ -41,7 +42,8 @@ class CrudController extends Controller
         $emp->status = $status;
         $emp->save();
 
-        session(['create_e' => 1]);
+        // session(['create_e' => 1]);
+        Session::flash('success','Employee was created!');
         return redirect('employee');
     }
 
@@ -96,7 +98,8 @@ class CrudController extends Controller
         $emp->status = $status;
         $emp->save();
 
-        session(['edit_e' => 1]);
+        // session(['edit_e' => 1]);
+        Session::flash('success','Employee#'. $id .' was updated!');
         return redirect('employee');
     }
 
@@ -104,31 +107,32 @@ class CrudController extends Controller
         if (Auth::guest()) {
             return redirect('login');
         }
-    	$id = $request->id;
-    	$name = $request->name;
+        $id = $request->id;
+        $name = $request->name;
 
-    	return view('delete_eModal',compact('id','name'));
+        return view('delete_eModal',compact('id','name'));
     }
 
     function deletedEmployee(Request $request){
         if (Auth::guest()) {
             return redirect('login');
         }
-    	$id = $request->del_eid;
-    	$emp = Employee::find($id);
-		$emp->delete();
+        $id = $request->del_eid;
+        $emp = Employee::find($id);
+        $emp->delete();
 
-    	session(['edit_e' => 1]);
-    	return redirect('employee');
+        // session(['edit_e' => 1]);
+        Session::flash('success','Employee#'. $id .' was deleted!');
+        return redirect('employee');
     }
 
     function showEmployee(){
         if (Auth::guest()) {
             return redirect('login');
         }
-    	$emp_list = Employee::all();
+        $emp_list = Employee::all();
         $dept_list = Department::all();
-    	return view('browse_e',compact('emp_list','dept_list'));
+        return view('browse_e',compact('emp_list','dept_list'));
     }
 
 
@@ -144,7 +148,8 @@ class CrudController extends Controller
         $dept->description = $description;
         $dept->save();
 
-        session(['create_d' => 1]);
+        // session(['create_d' => 1]);
+        Session::flash('success','Department was created!');
         return redirect('department');
     }
 
@@ -172,7 +177,8 @@ class CrudController extends Controller
         $dept->description = $description;
         $dept->save();
 
-        session(['edit_d' => 1]);
+        // session(['edit_d' => 1]);
+        Session::flash('success','Department#'. $id .' was updated!');
         return redirect('department');
     }
 
@@ -194,7 +200,8 @@ class CrudController extends Controller
         $emp = Department::find($id);
         $emp->delete();
 
-        session(['edit_d' => 1]);
+        // session(['edit_d' => 1]);
+        Session::flash('success','Department#'. $id .' was deleted!');
         return redirect('department');
     }
 
